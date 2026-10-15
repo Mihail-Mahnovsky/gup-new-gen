@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://uxk2dplkkm10"]
+
+[ext_resource type="Script" uid="uid://dig3nvykbwcow" path="res://scripts/information_table.gd" id="1_85ui0"]
+
+[node name="InformationTable" type="Control" unique_id=1127512085]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_85ui0")
+
+[node name="Panel" type="Panel" parent="." unique_id=207473548]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 264.0
+
+[node name="speed" type="Label" parent="Panel" unique_id=1876594757]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 163.0
+offset_bottom = 44.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="amo" type="Label" parent="Panel" unique_id=425447001]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 58.0
+offset_right = 163.0
+offset_bottom = 86.0
+horizontal_alignment = 1
+vertical_alignment = 1

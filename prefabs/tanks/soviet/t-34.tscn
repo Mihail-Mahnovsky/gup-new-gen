@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ce0vwaid156md"]
+
+[ext_resource type="Script" uid="uid://s1rlijevjtd2" path="res://scripts/tank_controller.gd" id="1_k4m7e"]
+[ext_resource type="Texture2D" uid="uid://c5cj06spr2g0g" path="res://icon.svg" id="2_f2pky"]
+[ext_resource type="Script" uid="uid://csiogs6xg2d5i" path="res://scripts/tank_enter.gd" id="2_ipob1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(212, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(323, 197)
+
+[node name="T34" type="RigidBody2D" unique_id=1957646632]
+gravity_scale = 0.0
+script = ExtResource("1_k4m7e")
+engine_force = 700.0
+torque_force = 12000.0
+pixels_per_meter = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1645758868]
+position = Vector2(2, -1)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1123730622]
+script = ExtResource("2_ipob1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=54242602]
+position = Vector2(-7.5, -3.5)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1805931590]
+position = Vector2(1.4999981, -2.999998)
+scale = Vector2(1.6796875, 0.81250006)
+texture = ExtResource("2_f2pky")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dlhoqilkgiqtu"]
+
+[ext_resource type="PackedScene" uid="uid://tyhu6btanh8a" path="res://prefabs/player.tscn" id="1_15u2t"]
+[ext_resource type="PackedScene" uid="uid://ce0vwaid156md" path="res://prefabs/tanks/soviet/t-34.tscn" id="2_6v7uh"]
+[ext_resource type="PackedScene" uid="uid://uxk2dplkkm10" path="res://prefabs/information_table.tscn" id="3_yvm8t"]
+[ext_resource type="Texture2D" uid="uid://c5cj06spr2g0g" path="res://icon.svg" id="4_vehn4"]
+[ext_resource type="Script" uid="uid://b4v4r4qqvhhci" path="res://scripts/camera_zoom.gd" id="4_ytxvr"]
+
+[node name="TestPolygon" type="Node2D" unique_id=619846746]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=367439565]
+position = Vector2(1584, 680)
+texture = ExtResource("4_vehn4")
+
+[node name="Player" parent="." unique_id=209024581 instance=ExtResource("1_15u2t")]
+position = Vector2(841, 275)
+
+[node name="T34" parent="." unique_id=1957646632 instance=ExtResource("2_6v7uh")]
+position = Vector2(241, 335)
+
+[node name="Camera2D" type="Camera2D" parent="T34" unique_id=1854157824 node_paths=PackedStringArray("tank")]
+position = Vector2(1, 1)
+script = ExtResource("4_ytxvr")
+tank = NodePath("..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=670597545]
+
+[node name="InformationTable" parent="CanvasLayer" unique_id=1127512085 node_paths=PackedStringArray("tank") instance=ExtResource("3_yvm8t")]
+offset_left = 1591.0
+offset_top = 778.0
+offset_right = 1591.0
+offset_bottom = 778.0
+tank = NodePath("../../T34")
