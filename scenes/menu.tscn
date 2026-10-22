@@ -1,48 +1,79 @@
 [gd_scene format=3 uid="uid://bj5cn7n05jiie"]
 
 [ext_resource type="Script" uid="uid://5f5bbkn44r6u" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://djpqnuyffx627" path="res://sprites/фон2.jpg" id="2_vjb58"]
 
 [node name="Control" type="Control" unique_id=1150343187]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -198.0
+offset_right = -57.0
+offset_bottom = -198.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqeox")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=724477308]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=678839949]
-anchors_preset = 8
-anchor_left = 0.5
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1230213939]
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -145.5
-offset_top = -83.5
-offset_right = 145.5
-offset_bottom = 83.5
-grow_horizontal = 2
+offset_left = 80.99999
+offset_top = -162.0
+offset_right = 406.0
+offset_bottom = 155.25
 grow_vertical = 2
+scale = Vector2(1.5199995, 1.5600026)
 
-[node name="start" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=114040122]
-layout_mode = 2
+[node name="start" type="Button" parent="CanvasLayer/Panel" unique_id=114040122]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 88.0
+offset_right = 322.0
+offset_bottom = 139.0
+scale = Vector2(0.87999755, 1)
 size_flags_horizontal = 5
 size_flags_vertical = 7
 text = "start"
 
-[node name="settings" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1051931916]
-layout_mode = 2
+[node name="settings" type="Button" parent="CanvasLayer/Panel" unique_id=1051931916]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 143.0
+offset_right = 322.0
+offset_bottom = 195.0
+scale = Vector2(0.87999755, 1)
 size_flags_horizontal = 5
 size_flags_vertical = 7
 text = "settings"
 
-[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=2026204557]
-layout_mode = 2
+[node name="quit" type="Button" parent="CanvasLayer/Panel" unique_id=2026204557]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 199.0
+offset_right = 322.0
+offset_bottom = 251.0
+scale = Vector2(0.87999755, 1)
 size_flags_horizontal = 5
 size_flags_vertical = 7
 text = "quit"
 
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_button_down"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_button_down"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1696681355]
+layout_mode = 0
+offset_left = 4.5
+offset_top = 38.25
+offset_right = 257.5
+offset_bottom = 61.25
+text = "Panzer Vor!"
+horizontal_alignment = 1
+
+[node name="Фон2" type="Sprite2D" parent="." unique_id=1341262539]
+position = Vector2(1035, 737)
+texture = ExtResource("2_vjb58")
+
+[connection signal="button_down" from="CanvasLayer/Panel/start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="CanvasLayer/Panel/quit" to="." method="_on_quit_button_down"]
